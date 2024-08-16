@@ -16,7 +16,7 @@ chrome.commands.onCommand.addListener((command) => {
           type: 'popup',
           top: 300, left: 300,
           width: 480,
-          height: 600
+          height: 700
         });
       }
     });
@@ -37,7 +37,7 @@ chrome.runtime.onMessage.addListener((request, _sender, _sendResponse) => {
         type: 'popup',
         top: 300, left: 300,
         width: 480,
-        height: 600
+        height: 700
       });
 
     });
