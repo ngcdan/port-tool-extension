@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Finder</title>
+    <!-- Sử dụng Tailwind CSS qua CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="p-4 bg-gray-100 min-h-screen flex flex-col" style="min-width: 480px;">
+    <h2 class="text-xl font-bold mb-4 border-b-2 border-dotted">Find Nearest Route</h2>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700 mb-2">Transportation</label>
+      <div>
+        <label class="inline-flex items-center mr-4">
+          <input type="radio" name="transport" value="Sea" class="form-radio" checked>
+          <span class="ml-2">Sea</span>
+        </label>
+        <label class="inline-flex items-center mr-4">
+          <input type="radio" name="transport" value="Air" class="form-radio">
+          <span class="ml-2">Air</span>
+        </label>
+        <label class="inline-flex items-center mr-4">
+          <input type="radio" name="transport" value="Trucking" class="form-radio">
+          <span class="ml-2">Trucking</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Pickup Address</label>
+      <input id="pickup" type="text"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        placeholder="Enter pickup address">
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Delivery Address</label>
+      <input id="delivery" type="text"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        placeholder="Enter delivery address">
+    </div>
+
+    <button id="findPort" class="w-full bg-indigo-600 text-white py-2 rounded-md">Finding</button>
+    <div id="result" class="mt-4"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
