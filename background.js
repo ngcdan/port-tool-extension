@@ -1,6 +1,8 @@
 chrome.commands.onCommand.addListener((command) => {
   if (command === 'toggle-popup') {
     chrome.windows.getAll({ populate: true }, (windows) => {
+      console.log(windows);
+
       const popupWindow = windows.find(win => win.type === 'popup');
 
       if (popupWindow) {
@@ -8,7 +10,14 @@ chrome.commands.onCommand.addListener((command) => {
         chrome.windows.remove(popupWindow.id);
       } else {
         // Mở cửa sổ popup nếu nó chưa mở
-        chrome.action.openPopup();
+        // chrome.action.openPopup();
+        chrome.windows.create({
+          url: 'popup.html',
+          type: 'popup',
+          top: 300, left: 300,
+          width: 480,
+          height: 600
+        });
       }
     });
   }
@@ -16,10 +25,22 @@ chrome.commands.onCommand.addListener((command) => {
 
 //Xử lý mở popup và điền text vào pickup trong background.js
 chrome.runtime.onMessage.addListener((request, _sender, _sendResponse) => {
+
   if (request.action === 'openPopupWithText') {
     chrome.storage.local.set({ pickupText: request.text }, () => {
       console.log('Text saved to storage:', request.text); // In ra để kiểm tra
-      chrome.action.openPopup();
+
+      // chrome.action.openPopup();
+
+      chrome.windows.create({
+        url: 'popup.html',
+        type: 'popup',
+        top: 300, left: 300,
+        width: 480,
+        height: 600
+      });
+
     });
   }
+
 });

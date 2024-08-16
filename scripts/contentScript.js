@@ -25,6 +25,7 @@ icon.addEventListener('click', async () => {
   const selectedText = window.getSelection().toString().trim();
   if (selectedText) {
     // Lưu text vào clipboard
+    console.log('Copied text:', selectedText);
     await navigator.clipboard.writeText(selectedText);
 
     // Mở popup của extension
@@ -32,12 +33,15 @@ icon.addEventListener('click', async () => {
   }
 });
 
-// Xử lý phím tắt Shift + S để tìm thông tin cảng
 document.addEventListener('keydown', (event) => {
-  if (event.shiftKey && event.key === 'S') {
+  console.log('handle keydown');
+  console.log(event);
+  if ((event.metaKey || event.ctrlKey) && event.key === 'e') {
+    console.log('Ctrl+E pressed');
     const selectedText = window.getSelection().toString().trim();
     if (selectedText) {
       findNearestPort(selectedText).then(port => {
+        console.log('Nearest port:', port);
         showTooltip(port.name, port.location);
       }).catch(error => {
         showTooltip('Error', error.message);
