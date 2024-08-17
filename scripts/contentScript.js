@@ -34,10 +34,7 @@ icon.addEventListener('click', async () => {
 });
 
 document.addEventListener('keydown', (event) => {
-  console.log('handle keydown');
-  console.log(event);
   if ((event.metaKey || event.ctrlKey) && event.key === 'e') {
-    console.log('Ctrl+E pressed');
     const selectedText = window.getSelection().toString().trim();
     if (selectedText) {
       findNearestPort(selectedText).then(port => {
@@ -52,17 +49,9 @@ document.addEventListener('keydown', (event) => {
 
 // Hàm giả lập tìm kiếm cảng
 function findNearestPort(_address, transportMethod) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _reject) => {
     setTimeout(() => {
-      if (transportMethod === 'Sea') {
-        resolve({ name: 'Port of New York (Sea)', location: 'New York, NY' });
-      } else if (transportMethod === 'Air') {
-        resolve({ name: 'Los Angeles International Airport (Air)', location: 'Los Angeles, CA' });
-      } else if (transportMethod === 'Trucking') {
-        resolve({ name: 'Chicago Trucking Hub', location: 'Chicago, IL' });
-      } else {
-        reject(new Error('No port found for the given address and transport method.'));
-      }
+      resolve({ name: 'Port of New York (Sea)', location: 'New York, NY' });
     }, 1000);
   });
 }

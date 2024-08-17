@@ -66,8 +66,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "images/icon-16.png",
-        "ports.json"
+        "images/icon-16.png"
       ],
       "matches": [
         "https://*/*"

@@ -1,5 +1,3 @@
-
-
 function createPopup() {
   chrome.windows.create({
     url: 'popup.html',
