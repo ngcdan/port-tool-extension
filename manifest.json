@@ -3,6 +3,9 @@
   "name": "Route Finder Extension",
   "description": "Find the nearest route based on pickup or delivery address.",
   "version": "1.0",
+  "host_permissions": [
+    "https://www.nqcdan.rocks/*"
+  ],
   "permissions": [
     "activeTab",
     "geolocation",
@@ -63,7 +66,6 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "logo.png",
         "images/icon-16.png",
         "ports.json"
       ],
