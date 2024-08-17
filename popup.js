@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //I used async/await syntax to wait for both findNearestPort promises to resolve before proceeding to update the DOM.
   document.getElementById('findPort').addEventListener('click', async () => {
+
     const pickup = document.getElementById('pickup').value.trim();
     const delivery = document.getElementById('delivery').value.trim()
 
@@ -190,22 +191,4 @@ document.addEventListener('DOMContentLoaded', () => {
   function toRadians(degrees) {
     return degrees * Math.PI / 180;
   }
-
-
-  // function findNearestPort(_address, transportMethod) {
-  //   return new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       if (transportMethod === 'Sea') {
-  //         resolve({ name: 'Port of New York (Sea)', location: 'New York, NY' });
-  //       } else if (transportMethod === 'Air') {
-  //         resolve({ name: 'Los Angeles International Airport (Air)', location: 'Los Angeles, CA' });
-  //       } else if (transportMethod === 'Trucking') {
-  //         resolve({ name: 'Chicago Trucking Hub', location: 'Chicago, IL' });
-  //       } else {
-  //         reject(new Error('No port found for the given address and transport method.'));
-  //       }
-  //     }, 1000);
-  //   });
-  // }
-
 })

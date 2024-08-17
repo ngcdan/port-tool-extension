@@ -7,11 +7,11 @@
     <!-- Sử dụng Tailwind CSS qua CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
-  <body class="p-4 bg-gray-100 min-h-screen flex flex-col" style="min-width: 480px;">
-    <h2 class="text-xl font-bold mb-4 border-b-2 border-dotted">Find Nearest Route</h2>
+  <body class="flex flex-col min-h-screen p-4 bg-gray-100" style="min-width: 480px;">
+    <h2 class="mb-4 text-xl font-bold border-b-2 border-dotted">Find Nearest Route</h2>
 
     <div class="mb-4">
-      <label class="block text-sm font-medium text-gray-700 mb-2">Transportation</label>
+      <label class="block mb-2 text-sm font-medium text-gray-700">Transportation</label>
       <div>
         <label class="inline-flex items-center mr-4">
           <input type="radio" name="transport" value="Sea" class="form-radio" checked>
@@ -31,19 +31,20 @@
     <div class="mb-4">
       <label class="block text-sm font-medium text-gray-700">Pickup Address</label>
       <input id="pickup" type="text"
-        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         placeholder="Enter pickup address">
     </div>
 
     <div class="mb-4">
       <label class="block text-sm font-medium text-gray-700">Delivery Address</label>
       <input id="delivery" type="text"
-        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         placeholder="Enter delivery address">
     </div>
 
-    <button id="findPort" class="w-full bg-indigo-600 text-white py-2 rounded-md">Finding</button>
+    <button id="findPort" class="w-full py-2 text-white bg-indigo-600 rounded-md">Finding</button>
     <div id="result" class="mt-4"></div>
+
     <script src="popup.js"></script>
   </body>
 </html>

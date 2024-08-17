@@ -1,0 +1,10 @@
+{
+  "extensionDescription": {
+    "description": "Route Finder Extension",
+    "message": "Find the nearest route based on pickup or delivery address."
+  },
+  "extensionName": {
+    "description": "Route Finder Extension",
+    "message": "Find the nearest route based on pickup or delivery address."
+  }
+}
