@@ -69,5 +69,6 @@ function showTooltip(title, message) {
 
   setTimeout(() => {
     tooltip.remove();
-  }, 3000);
+  }, 5000);
+
 }
